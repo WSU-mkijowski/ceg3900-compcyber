@@ -1,44 +1,50 @@
-## git / GitHub
+# OSI topics
 
-- why git
-- PRs and contributing
+---
 
-## Meta
+Images and data:
 
-Image metadata
-
-## Lookup
-
-DNS and authorship
-
-## Threat Intel
-
-- CVE 
-- add CPE lookup
-- add NIST frameworks
-
-## HTTP Headers
-
-- URL
-- URI
-- Protocols
-- add GET, POST, and FTP equivalents
-
-## SSL
-
-- SSL certificate chains
-- add CSA and trust
-
-## Barcode
-
-- Familiarize and document
+- Meta
+  - Image metadata
+- Barcode
+  - Familiarize and document
 - add QR codes
-- add AIM hackathon resources
+- AIM hackathon resources: 
+  - https://github.com/wrightedu/Make-IT-Wright-2023
+  - https://github.com/wrightedu/Make-IT-Wright-2023/wiki
 
-## WHOIS
+---
 
-- more DNS, ICANN
+Network and DNS
 
-## PGP Lookup
+- Lookup
+  - DNS and authorship
+- WHOIS
+  - more DNS, ICANN
 
-Kijowski
+---
+
+NIST
+
+- Threat Intel
+  - CVEs
+  - [CPE lookup](https://nvd.nist.gov/products/cpe/search)
+
+---
+## Web
+
+- HTTP Headers
+  - URL
+  - URI
+  - Protocols
+  - add GET, POST, and FTP equivalents
+- SSL
+  - SSL certificate chains
+  - add CSA and trust
+
+---
+
+## GPG/PGP Lookup
+
+- Kijowski
+

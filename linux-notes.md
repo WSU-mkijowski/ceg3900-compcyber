@@ -110,4 +110,6 @@ Image:
   User time: 0.010u
   Elapsed time: 0:01.043
   Version: ImageMagick 7.1.2-13 Q16-HDRI x86_64 2fae24192:20260118 https://imagemagick.org
-``` 
+```
+
+I did the thing 

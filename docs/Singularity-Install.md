@@ -26,7 +26,7 @@ $ sudo apt-get install -y \
    wget \
    zlib1g-dev \
    build-utils \
-   make
+   gcc
 # added build-utils and make 
 ```
 
@@ -62,4 +62,9 @@ Install Singularity 4.3
 $ ./mconfig --without-libsubid
 $ make -C builddir
 $ sudo make -C builddir install
+```
+
+Test installation
+```
+$ singularity --version
 ```

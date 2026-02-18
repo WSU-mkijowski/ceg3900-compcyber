@@ -4,6 +4,16 @@ Get the Kali container from someone who knows or here: `wget https://web1.cs.wri
 
 ***Note: requires campus vpn or being on secure wireless!***
 
+#### TL/DR AFTER getting the container above and bash_aliases below
+
+* rockyou dictionary attack (very long): `john --format=<format> --wordlist=/usr/share/wordlists/rockyou.txt <./hashfile>`
+* xpspecial windows attack: `ophcrack -t /usr/share/wordlists/xpspecial -f <./windows.hashes>`
+* Kore custom rule attack: `john --config=./john-rules.custom --rules=KoreLogicRulesAppend2Num --wordlist=<words>  <./hashfile>`
+
+---
+
+## building your own container
+
 You can build your own by follwoing this but it will take a while and xpspecial is non-trivial to download:
 
 ```bash
@@ -27,9 +37,12 @@ sudo singularity build kali.sif ./kali/
 ### sample `~/.bash_aliases`
 
 ```bash
-alias kali="singularity shell $CONTAINERS/kali/"
-alias john="singularity exec $CONTAINERS/kali/ john"
-alias binwalk="singularity exec $CONTAINERS/kali/ binwalk"
+CONTAINERS=~/containers
+
+alias kali="singularity shell $CONTAINERS/kali.sif"
+alias john="singularity exec $CONTAINERS/kali.sif john"
+alias ophcrack="singularity exec $CONTAINERS/kali.sif ophcrack"
+alias binwalk="singularity exec $CONTAINERS/kali.sif binwalk"
 alias whereami="cat /opt/os-release"
 
 #dont forget to source ~/.bashrc after!

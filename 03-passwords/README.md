@@ -1,6 +1,10 @@
 # Password cracking
 
-Get the Kali container from someone who knows...
+Get the Kali container from someone who knows or here: `wget https://web1.cs.wright.edu/~w114mek/kali.sif`
+
+***Note: requires campus vpn or being on secure wireless!***
+
+You can build your own by follwoing this but it will take a while and xpspecial is non-trivial to download:
 
 ```bash
 sudo singularity build --sandbox ./kali/ docker://kalilinux/kali-rolling

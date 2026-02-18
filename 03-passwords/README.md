@@ -43,7 +43,7 @@ alias kali="singularity shell $CONTAINERS/kali.sif"
 alias john="singularity exec $CONTAINERS/kali.sif john"
 alias ophcrack="singularity exec $CONTAINERS/kali.sif ophcrack"
 alias binwalk="singularity exec $CONTAINERS/kali.sif binwalk"
-alias whereami="cat /opt/os-release"
+alias whereami="cat /etc/os-release"
 
 #dont forget to source ~/.bashrc after!
 ```

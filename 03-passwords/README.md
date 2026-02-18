@@ -26,6 +26,7 @@ sudo singularity build kali.sif ./kali/
 alias kali="singularity shell $CONTAINERS/kali/"
 alias john="singularity exec $CONTAINERS/kali/ john"
 alias binwalk="singularity exec $CONTAINERS/kali/ binwalk"
+alias whereami="cat /opt/os-release"
 
 #dont forget to source ~/.bashrc after!
 ```

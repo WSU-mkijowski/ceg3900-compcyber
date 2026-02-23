@@ -12,17 +12,45 @@ Many of the tools you need can be found in the Kali container (checkout
   * WARNING!!!! some file types have extracted data inside of them
     which can look like another file but its not...
 * `volatility` - volatile memory dump parser and more.
-  * has both `volatility2` and `3` versions using python 2 or 3
-  * ***Volatility3 did not work for me***
-  * neither did manually installing volatility2
+  * has both `volatility2` and `3` versions using python 2 or 3, neither of
+    which install properly...
+  * Volatility2 container *mostly* worked
+  * Volatility3 eventually worked fine...
 
-## Installing `volatility2`
+---
+
+## Installing `volatility3`
+
+
+1. `singularity build $CONTAINERS/volatility3.sif docker://sk4la/volatility3`
+2. `alias vol3="singularity exec $CONTAINERS/volatility3.sif volatility3"`
+
+## Using `vol3`
+
+Check available plugins: `vol3 -h`
+
+1. Start by checkign the information in your memory dump file:
+  *  `vol3 -f <./memdump_file> windows.imageinfo`
+2. View process info:
+  *  `vol3 -f <./memdump_file> windows.psscan`
+  *  `vol3 -f <./memdump_file> windows.pstree`
+3. View open files:
+  *  `vol3 -f <./memdump_file> windows.filescan`
+4. Extract file from memory location:
+  *  `vol3 -f <./memdump_file> -o ./<tempdir>/ windows.dumpfiles --virtaddr <VirtualAddress-from-filescan>`
+  * check in `./tempdir/` after completion
+5. Extract password hashes:
+  *  `vol3 -f <./memdump_file> windows.hashdump`
+
+---
+
+### Don't bother installing `volatility2` (this is just for documentation)
 
 1. `sudo singularity build $CONTAINERS/volatility2.sif docker://oste/volatility2:amd64`
 2. `alias vol2="singularity exec $CONTAINERS/volatility2.sif python2
    /opt/volatility/vol.py"`
 
-## Using Volatility2
+### Don't bother using Volatility2
 
 1. Start by checkign the information in your memory dump file:
   *  `vol2 -f <./memdump_file> imageinfo`

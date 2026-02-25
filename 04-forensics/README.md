@@ -64,3 +64,49 @@ Check available plugins: `vol3 -h`
 4. Check for password hashes:
   * `vol2 -f <./memdump_file> -profile=<from-above> hashdump`
 5. ??
+
+---
+
+## git history
+`git log --format='%ae' | sort -u` where
+- `%ae`: Author email.
+- `%ce`: Committer email (useful if someone else merged the code).
+- `sort -u`: Removes duplicates so you only see unique addresses.
+
+`git rev-list --all --objects | awk '{print $1}' | xargs -I {} git cat-file -p {}`
+
+It is a three-part pipeline designed to force Git to reveal the contents of every single object it has ever stored, regardless of whether that object is in your current branch, an old deleted branch, or a hidden configuration.
+
+Here is the breakdown of the "anatomy" of this command:
+
+1. `git rev-list --all --objects`
+Standard git log only shows you commits. This command goes much deeper.
+
+- `--all`: Tells Git to look at every single "ref" (all branches, all tags, and the stash).
+
+- `--objects`: Tells Git to list not just the commits, but also the Trees (folder structures) and Blobs (the actual file contents) associated with those commits.
+
+The Output: A long list of SHA-1 hashes followed by their file paths.
+
+2. `awk '{print $1}'`
+The previous command outputs two columns: [`hash`] `[path`].
+
+This awk command simply strips away the filenames and paths, leaving you with a clean list of hashes. This is necessary because the next command only understands hashes, not names.
+
+3. `xargs -I {} git cat-file -p {}`
+This is where the heavy lifting happens.
+- `xargs -I {}`: This takes each hash from the list and prepares it to be used as an argument.
+- `git cat-file -p`: This is the "caterpillar" (print) command for Git objects. The `-p` flag stands for pretty-print. It tells Git: "Take this compressed, binary blob and turn it back into readable text/content."
+
+TODO: investigate [TruffleHog](https://github.com/trufflesecurity/trufflehog)
+
+---
+
+## PDFs
+`pdfinfo` - show creating program
+- Creator: The software used to write the original content (e.g., Microsoft® Word 2021)
+- Producer: The "engine" that generated the PDF (e.g., macOS Version 14.2 (Build 23C71) Quartz PDFContext).
+
+`strings api.pdf | grep "SKY"`
+
+TODO: this aws easy with `strings` because they used a simple program.  Need to try more advanced redaction removal techniques

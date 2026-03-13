@@ -37,7 +37,7 @@
     Here you should see additional resources have been created (not everything says 0 anymore)
 11. Click on [Running Instances](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:sort=instanceState)
 12. Our instance should now be created (or almost ready).  Select the checkbox next to the instance name "CEG 2350" to see all details about this instance.
-13. Your instance will be assigned a unique Elastic / Public IP address. This IP address is what we will use to SSH to the instance.
+13. Your instance will be assigned a unique Public IP address. The IP address will change every time the instance is turned on. This IP address is what we will use to SSH to the instance.
 
 **You are now ready to make an SSH connection to your AWS server.**
 

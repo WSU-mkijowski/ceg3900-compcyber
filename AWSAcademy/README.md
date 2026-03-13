@@ -23,7 +23,7 @@
    - You'll need this for Connecting to the AWS Instance in the sections below, after completing the remainder of these steps
 8. Click **AWS** which should have a green dot next to it located on the left
    - This will take you to your AWS Console for your account. Now the fun begins.
-9. Download [CEG3900-CF.yml](https://raw.github.com/dkfjaeoifj)
+9. Download [CEG3900-CF.yml](https://raw.githubusercontent.com/WSU-mkijowski/ceg3900-compcyber/refs/heads/aws-academy-%26-cf-template/AWSAcademy/CEG3900-CF.yml)
 10. In a new tab, enter the following URL in the browser (or click link to open): <a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new" target="_blank">https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new</a>
    - Upload the CF template file, then select Next
    - On the second menu, under Parameters, under Key Name, select `vockey`
@@ -104,7 +104,9 @@ Every 4 hours, instances (virtual machines) on AWS will automatically power down
 6. Click **AWS** which should have a green dot next to it located on the left
    - This will take you to your AWS Console for your account.
    - The light next to **AWS** should now be **green**
-7. Be patient, but you should now be able to `ssh` in to your instance with your private key to the same IP as before
+7. Click **AWS** which should have a green dot next to it located on the left to sign into the AWS console
+8. Go to [Running Instances](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:sort=instanceState) to check your instance's public IP in your instance details
+9. `ssh` to your instance with your instance's new public IP and your `ssh` private key
 
 ## Building a New Instance
 

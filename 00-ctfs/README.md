@@ -1,0 +1,5 @@
+## Capture the Flag Collections
+
+- [snyk](https://ctf.snyk.io/)
+    - Hits in February?
+    - includes LLM / AI CTFs
